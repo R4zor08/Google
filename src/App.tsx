@@ -4,28 +4,23 @@ import { SearchIcon, MicIcon, ImageIcon } from 'lucide-react';
 const CODE_1 = `import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const JerseyApp());
+  runApp(const MyApp());
 }
 
-class JerseyApp extends StatelessWidget {
-  const JerseyApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Jersey UI',
-      theme: ThemeData(
-        fontFamily: 'Arial',
-        scaffoldBackgroundColor: const Color(0xFFF4F7FF),
-      ),
-      home: const ProductScreen(),
+      home: MainScreen(),
     );
   }
 }
 
-class ProductScreen extends StatelessWidget {
-  const ProductScreen({super.key});
+class MainScreen extends StatelessWidget {
+  const MainScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -59,26 +54,14 @@ class ProductScreen extends StatelessWidget {
             ),
             child: Column(
               children: [
-                Container(
-                  width: double.infinity,
-                  height: 375,
-                  color: const Color(0xFFEAF0FF),
-                  child: Center(
-                    child: Image.asset(
-                      'assets/images/nike.png',
-                      width: 450,
-                      height: 580,
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                ),
-
+                // DETAILS SECTION - text first before the image
                 Container(
                   width: 450,
                   padding: const EdgeInsets.only(
-                    top: 58,
+                    top: 55,
                     left: 35,
                     right: 35,
+                    bottom: 35,
                   ),
                   color: const Color.fromARGB(255, 255, 255, 255),
                   child: const Column(
@@ -88,7 +71,7 @@ class ProductScreen extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 25,
-                          height: 0.8,
+                          height: 0.9,
                           fontWeight: FontWeight.w900,
                           letterSpacing: 1.2,
                           color: Color(0xFF113C8C),
@@ -119,6 +102,21 @@ class ProductScreen extends StatelessWidget {
                     ],
                   ),
                 ),
+
+                // IMAGE SECTION - moved below the text
+                Container(
+                  width: double.infinity,
+                  height: 375,
+                  color: const Color(0xFFEAF0FF),
+                  child: Center(
+                    child: Image.asset(
+                      'assets/images/nike.png',
+                      width: 450,
+                      height: 580,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
@@ -126,11 +124,7 @@ class ProductScreen extends StatelessWidget {
       ),
     );
   }
-}
-
-flutter:
-  assets:
-    - assets/images/nike.png`;
+}`;
 const CODE_2 = `import 'package:flutter/material.dart';
 
 void main() => runApp(const JerseyApp());
