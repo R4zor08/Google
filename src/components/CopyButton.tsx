@@ -1,4 +1,4 @@
-import React, { useState, createElement } from 'react';
+import { useState } from 'react';
 import { CopyIcon, CheckIcon } from 'lucide-react';
 interface CopyButtonProps {
   label: string;
@@ -25,6 +25,7 @@ export function CopyButton({ label, description, code }: CopyButtonProps) {
     <button
       type="button"
       onClick={handleCopy}
+      title={description}
       aria-label={
       copied ?
       `${label} code copied to clipboard` :

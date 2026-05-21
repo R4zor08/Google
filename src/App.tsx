@@ -1,4 +1,3 @@
-import React from 'react';
 import { CopyButton } from './components/CopyButton';
 import { GoogleLogo } from './components/GoogleLogo';
 import { SearchIcon, MicIcon, ImageIcon } from 'lucide-react';
